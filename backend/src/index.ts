@@ -14,13 +14,11 @@ const COINGECKO_API = "https://api.coingecko.com/api/v3";
 
 async function getCryptoPrices() {
     try {
-        const {data : bitData} = await axios.get("https://api.bitget.com/api/v2/spot/market/tickers?symbol=SUSDT")
-        const { data : binData } = await axios.get(`https://api.binance.com/api/v3/ticker/price?symbol=SUSDT`);
-        if(!binData && !bitData){
+        const { data : binData } = await axios.get(`https://api.binance.com/api/v3/ticker/price?symbol=EDUUSDT`);
+        if(!binData){
             return {success : false , msg: "No price data received"};
         }
-        const finalPrice = (parseFloat(bitData?.data[0].lastPr) + parseFloat(binData?.price)) /2;
-        console.log(finalPrice)
+        const finalPrice = parseFloat(binData?.price);
         return {success : true, price : finalPrice}
     } catch (error) {
         console.error("Failed to fetch crypto prices:", error);
@@ -28,7 +26,7 @@ async function getCryptoPrices() {
     }
 }
 
-async function getHistoricalData(coin = "ethereum", days = 7) {
+async function getHistoricalData(coin = "EDU", days = 7) {
     try {
         const { data } = await axios.get(
             `${COINGECKO_API}/coins/${coin}/market_chart?vs_currency=usd&days=${days}`
@@ -112,11 +110,11 @@ app.post("/query", async (req: any, res: any) => {
                     return res.json({ type: "price", data: "Unable to fetch prices at this time" });
                 }
                 const price = (prices.msg as any).price;
-                return res.json({ type: "price", data: `Current price of ethereum is : $${price}` });
+                return res.json({ type: "price", data: `Current price of edu is : $${price}` });
 
             case "sentiment":
                 const sentiment = await getMarketSentiment(userQuery);
-                const response = `According to my study the current sentiment of ethereum is ${sentiment}`;
+                const response = `According to my study the current sentiment of edu is ${sentiment}`;
                 return res.json({ type: "sentiment", data: response });
 
             case "prediction":

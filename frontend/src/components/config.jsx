@@ -3,24 +3,12 @@ import { getDefaultConfig,RainbowKitProvider} from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { darkTheme } from '@rainbow-me/rainbowkit';
-
-const sonicBlaze = {
-  id: 57_054,
-  name: 'Sonic Blaze Testnet',
-  iconBackground: '#fff',
-  nativeCurrency: { name: 'Sonic', symbol: 'S', decimals: 18 },
-  rpcUrls: {
-    default: { http: ['https://rpc.blaze.soniclabs.com'] },
-  },
-  blockExplorers: {
-    default: { name: 'SnowTrace', url: 'https://testnet.sonicscan.org' },
-  },
-}
+import { eduChainTestnet } from "wagmi/chains";
 
 const config = getDefaultConfig({
     appName: 'My RainbowKit App',
     projectId: 'YOUR_PROJECT_ID',
-    chains: [sonicBlaze],
+    chains: [eduChainTestnet],
     ssr: false,
 });
 

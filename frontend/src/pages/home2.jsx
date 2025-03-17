@@ -105,7 +105,7 @@ export default function Home() {
         viewport={{ once: false, amount: 0.2 }}
       >
         <FeatureCard variants={item} icon={Award} title="Earn Rewards" description="Stake tokens, contribute accurate data, and earn high-yield ERC-20 rewards." />
-        <FeatureCard variants={item} icon={Wallet} title="Fully Decentralized" description="Built on Sonic, ensuring trustless, transparent data flow." />
+        <FeatureCard variants={item} icon={Wallet} title="Fully Decentralized" description="Built on EduChain, ensuring trustless, transparent data flow." />
         <FeatureCard variants={item} icon={BarChart3} title="Live Price Feeds" description="Access real-time price data with unparalleled accuracy and speed." />
         <FeatureCard variants={item} icon={CheckCircle} title="Fair Incentives" description="Contributors earn for correct submissions; inaccurate data gets slashed." />
         <FeatureCard variants={item} icon={Bot} title="AI Chatbot Assistance" description="Execute transactions, stake tokens, and analyze data through an AI assistant." />

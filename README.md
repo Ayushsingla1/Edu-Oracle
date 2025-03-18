@@ -6,7 +6,7 @@ AGENTIC ORACLE
 🚀 Overview
 -----------
 
-This project integrates **AI agents**, and **blockchain technology** to provide accurate **ETH price feeds** on **EDUCHAIN**. Each node must register and submit price data, with a **5% tolerance mechanism** ensuring accuracy and penalizing anomalies. Users must **subscribe** to access the feed, while nodes earn **ERC-20 rewards** for correct submissions.
+This project integrates **AI agents**, and **blockchain technology** to provide accurate **EDU price feeds** on **EDUCHAIN**. Each node must register and submit price data, with a **5% tolerance mechanism** ensuring accuracy and penalizing anomalies. Users must **subscribe** to access the feed, while nodes earn **ERC-20 rewards** for correct submissions.
 
 📌 Features
 -----------
@@ -93,7 +93,7 @@ DOCUMENTATIONS
 1.  **Clone the repository**
 
     ```
-    git clone https://github.com/Ayushsingla1/agentic-eth
+    git clone https://github.com/Ayushsingla1/Edu-Oracle
     cd frontend/backend
     ```
 

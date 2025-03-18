@@ -6,14 +6,14 @@ import { ABI, contractAddress } from '../config/contractInfo';
 
 
 const priceData = [
-    { timestamp: '09:00', price: 1832.45 },
-    { timestamp: '09:15', price: 1835.20 },
-    { timestamp: '09:30', price: 1838.15 },
-    { timestamp: '09:45', price: 1836.80 },
-    { timestamp: '10:00', price: 1840.25 },
-    { timestamp: '10:15', price: 1842.65 },
-    { timestamp: '10:30', price: 1841.90 },
-    { timestamp: '10:45', price: 1843.55 },
+    { timestamp: '09:00', price: .164 },
+    { timestamp: '09:15', price: .162 },
+    { timestamp: '09:30', price: .165 },
+    { timestamp: '09:45', price: .169 },
+    { timestamp: '10:00', price: .156 },
+    { timestamp: '10:15', price: .159 },
+    { timestamp: '10:30', price: .152 },
+    { timestamp: '10:45', price: .155 },
 ];
 
 function PriceFeedGraph() {
@@ -29,7 +29,7 @@ function PriceFeedGraph() {
   }
 
   if(!isLoading){
-    for(let i = 2 ; i < 10 ; i++){
+    for(let i = 2 ; i < data.length ; i++){
       priceData[i-2].price = parseInt(data[i]) / (10 ** 18);
     }
     return (
@@ -84,8 +84,8 @@ function PriceFeedGraph() {
         </div>
       </div>
     );
+  // }
   }
-    
 }
 
 export default PriceFeedGraph;

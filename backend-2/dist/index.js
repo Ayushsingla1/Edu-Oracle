@@ -18,7 +18,7 @@ const config_1 = require("./config");
 require("dotenv/config");
 const axios_1 = __importDefault(require("axios"));
 const app = (0, express_1.default)();
-const RPC_URL = 'https://rpc.blaze.soniclabs.com';
+const RPC_URL = 'https://rpc.open-campus-codex.gelato.digital';
 const privateKey = process.env.PRIVATE_KEY;
 let provider;
 let wallet;
@@ -60,17 +60,17 @@ function isRegistered() {
 }
 isRegistered();
 function getEthPrice() {
-    return __awaiter(this, arguments, void 0, function* (ids = "ethereum") {
+    return __awaiter(this, void 0, void 0, function* () {
         try {
-            const { data } = yield axios_1.default.get(`https://api.binance.com/api/v3/ticker/price?symbol=SUSDT`);
+            const { data } = yield axios_1.default.get(`https://api.binance.com/api/v3/ticker/price?symbol=EDUUSDT`);
             if (!(data === null || data === void 0 ? void 0 : data.price)) {
                 return { success: false, msg: "Invalid price data received" };
             }
             return { success: true, msg: String(data.price) };
         }
         catch (error) {
-            console.error("Failed to get ETH price:", error);
-            return { success: false, msg: "Failed to fetch ETH price" };
+            console.error("Failed to get EDU price:", error);
+            return { success: false, msg: "Failed to fetch EDU price" };
         }
     });
 }

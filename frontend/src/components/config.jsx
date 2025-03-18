@@ -3,7 +3,20 @@ import { getDefaultConfig,RainbowKitProvider} from '@rainbow-me/rainbowkit';
 import { WagmiProvider } from 'wagmi';
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { darkTheme } from '@rainbow-me/rainbowkit';
-import { eduChainTestnet } from "wagmi/chains";
+
+
+const eduChainTestnet = {
+  id: 656476,
+  name: 'EDU Chain Testnet',
+  iconBackground: '#fff',
+  nativeCurrency: { name: 'Educhain', symbol: 'EDU', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://rpc.open-campus-codex.gelato.digital'] },
+  },
+  blockExplorers: {
+    default: {  url: 'https://edu-chain-testnet.blockscout.com' },
+  },
+}
 
 const config = getDefaultConfig({
     appName: 'My RainbowKit App',
